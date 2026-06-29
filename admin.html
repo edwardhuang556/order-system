@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>餐廳後台管理系統</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 額外幫後台加一點專屬的排版樣式 */
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .order-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .order-card {
+            background: white;
+            border-left: 5px solid #e67e22;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .order-card.completed {
+            border-left-color: #2ecc71;
+            opacity: 0.7;
+        }
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .order-items {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        .order-items li {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .status-btn {
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .status-btn.done {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>廚房訂單管理後台</h1>
+    </header>
+
+    <div class="admin-container">
+        <h2>即時訂單看板</h2>
+        <div class="order-grid" id="order-grid">
+            </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

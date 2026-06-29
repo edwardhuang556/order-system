@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上自動點餐系統</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>美味線上點餐</h1>
+    </header>
+
+    <div class="container">
+        <main class="menu-section">
+            <h2>今日菜單</h2>
+            <div class="menu-grid" id="menu-grid">
+                </div>
+        </main>
+
+        <aside class="cart-section">
+            <h2>我的購物車</h2>
+            <div class="table-input">
+                <label for="table-num">桌號：</label>
+                <input type="number" id="table-num" min="1" placeholder="請輸入桌號">
+            </div>
+            
+            <ul class="cart-list" id="cart-list">
+                <p class="empty-msg">購物車是空的</p>
+            </ul>
+
+            <div class="cart-total">
+                <span>總金額：</span>
+                <span id="total-price">$0</span>
+            </div>
+
+            <button class="submit-btn" onclick="submitOrder()">送出訂單</button>
+        </aside>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
